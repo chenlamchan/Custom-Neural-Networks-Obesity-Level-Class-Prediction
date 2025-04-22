@@ -4,7 +4,7 @@ About:
 
 This project is to build a classification prediction model to predict the classes of obesity based on the data of eating habits and physical conditions given as input.
 
-#### Dataset:
+### Dataset:
 Details of the dataset selected for this application: 
 
 **Name of dataset**: Estimation of Obesity Levels Based On Eating Habits and Physical Condition 
@@ -15,3 +15,14 @@ Details of the dataset selected for this application:
 **Instances**: 2111 rows, 17 columns  
 
 **Description of dataset**: Based on the information given on the source, selected dataset consists of 2111 rows, where each row corresponds to the eating habit and physical condition of one individual from the countries of Mexico, Peru and Colombia.
+
+**Task**: To build a classification prediction model to predict the classes of obesity based on the data 
+of eating habits and physical conditions given as input.  
+
+**Input feature**: 16 features 
+
+feature name = [ Gender, Age, Height, Weight, family_history_with_overweight, FAVC, FCVC, NCP, CAEC, SMOKE, CH2O, SCC, FAF, TUE, CALC, MTRANS] 
+
+**Target feature**: Obesity Level, 
+
+classes = ['Normal_Weight', 'Overweight_Level_I', 'Overweight_Level_II', 'Obesity_Type_I', 'Insufficient_Weight', 'Obesity_Type_II', 'Obesity_Type_III']
