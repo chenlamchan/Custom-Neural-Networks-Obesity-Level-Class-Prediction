@@ -18,8 +18,8 @@ Details of the dataset selected for this application:
 
 ---
 
-### Task: To build a classification prediction model to predict the classes of obesity based on the data 
-of eating habits and physical conditions given as input.  
+### Task: 
+To build a classification prediction model to predict the classes of obesity based on the data of eating habits and physical conditions given as input.  
 
 **Input feature**: 16 features 
 
