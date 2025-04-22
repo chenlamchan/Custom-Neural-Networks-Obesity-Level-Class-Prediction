@@ -4,7 +4,7 @@ About:
 
 This project is to build a classification prediction model to predict the classes of obesity based on the data of eating habits and physical conditions given as input.
 
-## Dataset:
+#### Dataset:
 Details of the dataset selected for this application: 
 
 **Name of dataset**: Estimation of Obesity Levels Based On Eating Habits and Physical Condition 
