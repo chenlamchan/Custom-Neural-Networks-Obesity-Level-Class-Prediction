@@ -16,8 +16,9 @@ Details of the dataset selected for this application:
 
 **Description of dataset**: Based on the information given on the source, selected dataset consists of 2111 rows, where each row corresponds to the eating habit and physical condition of one individual from the countries of Mexico, Peru and Colombia.
 
+---
 
-## Task: To build a classification prediction model to predict the classes of obesity based on the data 
+### Task: To build a classification prediction model to predict the classes of obesity based on the data 
 of eating habits and physical conditions given as input.  
 
 **Input feature**: 16 features 
