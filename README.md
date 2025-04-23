@@ -39,20 +39,53 @@ Table below shows the parameters defined in the model; justification will be dis
 ![model_info](img/model.png)
 
 a. Hidden layer: **4** layers with **16** neurons per layer.  
-Activation function: relu 
+Activation function: relu </br>
 Justification:
-
 - For activation function, relu is selected as it is simple while able to avoid the vanishing gradient problem that slow down or stop the learning process. 
 - For the number of hidden layer and neurons, they are selected based on the experiment to  determine the best combination of parameters by choosing the model that has the highest validation accuracy during training. 
 - Refer to table below for the experiment log, strategy adopted as follow: 
 
-**Experiment to search Optimal Parameter (Brute Force Search)**: 
+**Experiment to search Optimal Parameter (Iterative Brute Force Search)**: 
 
 - As a start, simple model is adopted by creating 1 hidden layer and nodes to be set half the number of features. </br> 
 - Then the model is trained to get it average maximum validation accuracy of training for a repeat of 3 times. Average of the average is computed as the final metric to compare between each model. </br> 
 - Next, continue to increase the number of nodes per layer slowly and if there is improvement on the validation accuracy. If minimal to no improvement observed, then increase the number of hidden layer and repeats the experiment. </br> 
 - At the same time, the epoch where the model stopped learning also being recorded to  monitor if the epoch is sufficient for model to learn. </br> 
-- As a result, hidden layer of 4 with neurons per layer of 16 (experiment no.8) is found  to be having highest average validation accuracy before it starts to degrade with neurons per layer of 20. (As shown in line chart below) </br> </br> 
+- As a result, hidden layer of 4 with neurons per layer of 16 (experiment no.8) is found  to be having highest average validation accuracy before it starts to degrade with neurons per layer of 20. (As shown in line chart below) </br> </br>
 
+Optimal Params (Hidden Layer): </br>
+![param_info](img/params_search_result.png)
+
+Experiment log:</br> 
 ![exp_info](img/table1_exp.png)
 
+
+b. Output Layer: 1 layer with 7 neurons 
+Activation function: softmax </br>
+Justification:
+
+- In output layer, 7 neurons are set due to the number of classes to be predicted is 7 classes.  
+- Softmax activation function is used for the purpose of multi-class classification task as it would 
+be able to produce output as the probabilities for each class. </br>
+
+c. Learning rate: Utilise Adaptive Moment Estimation (adam) </br>
+Justification: 
+- To save time and effort on experimenting, an optimizer is selected to adjust the learning rate 
+dynamically based on the historical gradient magnitudes.
+
+d. Loss function: Sparse Categorical Cross Entropy </br>
+Justification:
+- As this is a multiclass classification problem, categorical cross entropy is selected as the loss 
+function to minimise the difference between true and predicted distributions by penalizing 
+incorrect predictions effectively. Sparse type is used to in the target variable, it is provided as 
+integers instead of one-hot encoded vectors. 
+
+e. Batch_size = 8, Early_Stopping = 10  </br>
+Justification: 
+- To improve the model by enhancing the learning of model.
+
+**Experiment to improve model (Iterative Brute Force Search)**: 
+- After the optimal number of layers and neurons per layer are found, experiment was  done to enhance the training of the model. 
+- Batch_size parameter was used in training to allow more weight updates of the model. 
+- Early stopping criteria is added in training to preserve the resource of training and stopped automatically when there are 10 iterations with no significant improvement in 
+its learning. 
