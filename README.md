@@ -42,3 +42,21 @@ Model used: Multilayer Perceptron (MLP)
 Table below shows the parameters defined in the model; justification will be discussed in the next section. 
 
 ![model_info](img/model.png)
+
+a. Hidden layer: 4 layers with 16 neurons per layer.  
+Activation function: relu 
+Justification:
+
+- For activation function, relu is selected as it is simple while able to avoid the vanishing gradient problem that slow down or stop the learning process. 
+- For the number of hidden layer and neurons, they are selected based on the experiment to  determine the best combination of parameters by choosing the model that has the highest validation accuracy during training. 
+- Refer to table below for the experiment log, strategy adopted as follow: 
+
+**Experiment to search Optimal Parameter (Brute Force Search)**: 
+o As a start, simple model is adopted by creating 1 hidden layer and nodes to be set half the number of features. 
+o Then the model is trained to get it average maximum validation accuracy of training for a repeat of 3 times. Average of the average is computed as the final metric to compare between each model. 
+o Next, continue to increase the number of nodes per layer slowly and if there is improvement on the validation accuracy. If minimal to no improvement observed, then increase the number of hidden layer and repeats the experiment. 
+o At the same time, the epoch where the model stopped learning also being recorded to  monitor if the epoch is sufficient for model to learn. 
+o As a result, hidden layer of 4 with neurons per layer of 16 (experiment no.8) is found  to be having highest average validation accuracy before it starts to degrade with neurons per layer of 20. (As shown in line chart below) 
+
+![exp_info](img/table1_exp.png)
+
