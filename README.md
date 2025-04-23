@@ -28,3 +28,5 @@ feature name = [ Gender, Age, Height, Weight, family_history_with_overweight, FA
 **Target feature**: Obesity Level, 
 
 classes = ['Normal_Weight', 'Overweight_Level_I', 'Overweight_Level_II', 'Obesity_Type_I', 'Insufficient_Weight', 'Obesity_Type_II', 'Obesity_Type_III']
+
+![dataset_info](img/dataset.png)
