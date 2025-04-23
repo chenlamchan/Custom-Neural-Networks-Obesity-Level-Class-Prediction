@@ -38,7 +38,7 @@ Table below shows the parameters defined in the model; justification will be dis
 
 ![model_info](img/model.png)
 
-a. Hidden layer: **4** layers with **16** neurons per layer.  
+**a. Hidden layer: **4** layers with **16** neurons per layer.**  
 Activation function: relu </br>
 Justification:
 - For activation function, relu is selected as it is simple while able to avoid the vanishing gradient problem that slow down or stop the learning process. 
@@ -60,27 +60,26 @@ Experiment log:</br>
 ![exp_info](img/table1_exp.png)
 
 
-b. Output Layer: 1 layer with 7 neurons 
-Activation function: softmax </br>
+**b. Output Layer: 1 layer with 7 neurons; Activation function: softmax** </br>
 Justification:
 
 - In output layer, 7 neurons are set due to the number of classes to be predicted is 7 classes.  
 - Softmax activation function is used for the purpose of multi-class classification task as it would 
 be able to produce output as the probabilities for each class. </br>
 
-c. Learning rate: Utilise Adaptive Moment Estimation (adam) </br>
+**c. Learning rate: Utilise Adaptive Moment Estimation (adam)** </br>
 Justification: 
 - To save time and effort on experimenting, an optimizer is selected to adjust the learning rate 
-dynamically based on the historical gradient magnitudes.
+dynamically based on the historical gradient magnitudes.</br></br>
 
-d. Loss function: Sparse Categorical Cross Entropy </br>
+**d. Loss function: Sparse Categorical Cross Entropy** </br>
 Justification:
 - As this is a multiclass classification problem, categorical cross entropy is selected as the loss 
 function to minimise the difference between true and predicted distributions by penalizing 
 incorrect predictions effectively. Sparse type is used to in the target variable, it is provided as 
-integers instead of one-hot encoded vectors. 
+integers instead of one-hot encoded vectors. </br></br>
 
-e. Batch_size = 8, Early_Stopping = 10  </br>
+**e. Batch_size = 8, Early_Stopping = 10**  </br>
 Justification: 
 - To improve the model by enhancing the learning of model.
 
@@ -88,4 +87,10 @@ Justification:
 - After the optimal number of layers and neurons per layer are found, experiment was  done to enhance the training of the model. 
 - Batch_size parameter was used in training to allow more weight updates of the model. 
 - Early stopping criteria is added in training to preserve the resource of training and stopped automatically when there are 10 iterations with no significant improvement in 
-its learning. 
+its learning. </br></br>
+
+Optimal Params (Early Stoping,Batch Size): </br>
+![param_info](img/params_search_result2.png)
+
+Experiment log:</br> 
+![exp_info](img/table2_exp.png)
