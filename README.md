@@ -30,3 +30,15 @@ feature name = [ Gender, Age, Height, Weight, family_history_with_overweight, FA
 classes = ['Normal_Weight', 'Overweight_Level_I', 'Overweight_Level_II', 'Obesity_Type_I', 'Insufficient_Weight', 'Obesity_Type_II', 'Obesity_Type_III']
 
 ![dataset_info](img/dataset.png)
+
+
+### Model Development
+
+Model used: Multilayer Perceptron (MLP) 
+- MLP can learn high level and nonlinear patterns from the data.  
+- Can be used solve a multi-class classification problem as well. 
+- Able to reduce the extensive time-consuming manual feature engineering task. 
+
+Table below shows the parameters defined in the model; justification will be discussed in the next section. 
+
+![model_info](img/model.png)
