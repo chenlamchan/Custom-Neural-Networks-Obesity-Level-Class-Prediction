@@ -32,7 +32,7 @@ classes = ['Normal_Weight', 'Overweight_Level_I', 'Overweight_Level_II', 'Obesit
 ![dataset_info](img/dataset.png)
 
 
-### Model Development
+## Model Development
 
 Model used: Multilayer Perceptron (MLP) 
 - MLP can learn high level and nonlinear patterns from the data.  
