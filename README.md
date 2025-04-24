@@ -94,3 +94,17 @@ Optimal Params (Early Stoping,Batch Size): </br>
 
 Experiment log:</br> 
 ![exp_info](img/table2_exp.png)
+
+
+## Code Execution
+ Classification Steps 
+These are the steps to be performed in classification 
+Step 1: Data Cleaning 
+Sanity checks on the data has been performed: - - - 
+Missing value: No missing values are found. 
+Inconsistent value: There is no inconsistency found in the categorical 
+value. 
+Extreme value: No abnormal extreme value found in numerical 
+variables. 
+Step 2: Feature Engineering (Data Encoding): 
+The categorical variables below are encoded to numerical values:
