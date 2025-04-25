@@ -120,19 +120,21 @@ Stratify split is used and based on the target class to ensure the training and 
 has the similar class distribution. Training dataset will be used in model training, while 
 testing dataset will be used in model evaluation. </br>
 
-Step 5: Model Training 
+Step 5: Model Training </br>
 In this stage, experiment to search for the optimal parameter for model and the 
 enhance learning of model to be conducted. Detailed as discussed in section 3.0. After 
 the model parameters are determined and fixed, a final training iteration of model will 
 be conducted for 20 epochs. This is to get the best model out of the training, by saving 
-the best model through enabling the ModelCheckpoint function from tensorflow keras. 
-Step 6: Model Evaluation 
+the best model through enabling the ModelCheckpoint function from tensorflow keras. </br>
+
+Step 6: Model Evaluation </br>
 In this stage, the best model will be loaded and used to predict the input data, 
 the testing dataset. Then, the accuracy score and classification report will be computed 
-to quantify the performance of the prediction model.
+to quantify the performance of the prediction model. </br>
 
 The accuracy of this model measured using the test dataset is 87.22%. 
 And the figure below shows the classification report of the prediction model.
+
 ![result](img/result.png)
 
 Based 
