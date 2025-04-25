@@ -97,7 +97,7 @@ Experiment log:</br>
 
 
 ## Code Execution
- Classification Steps 
+ Classification Steps </br>
 These are the steps to be performed in classification </br>
 Step 1: Data Cleaning </br>
 Sanity checks on the data has been performed:
@@ -110,14 +110,16 @@ The categorical variables below are encoded to numerical values:
 
 ![encoding](img/encoding.png)
 
-Step 3: Feature Selection 
+Step 3: Feature Selection </br>
 In this study, all of the features will be selected as input to the prediction model. 
-Step 4: Training & Test Dataset Split 
+
+Step 4: Training & Test Dataset Split </br>
 In this stage, the dataset will be split into training set and test set with test size 
 of 30%. Train_test_split function from scikit-learn library is utilized for the data split. 
 Stratify split is used and based on the target class to ensure the training and testing set 
 has the similar class distribution. Training dataset will be used in model training, while 
-testing dataset will be used in model evaluation. 
+testing dataset will be used in model evaluation. </br>
+
 Step 5: Model Training 
 In this stage, experiment to search for the optimal parameter for model and the 
 enhance learning of model to be conducted. Detailed as discussed in section 3.0. After 
