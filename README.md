@@ -85,7 +85,7 @@ Optimal Params (Hidden Layer): </br>
 ![param_info](img/params_search_result.png)
 
 Experiment log:</br> 
-![experiments](img/params_search_result.png)
+![experiments](img/table1_exp.png)
 
 **b. Output Layer: 1 layer with 7 neurons; Activation function: softmax** </br>
 Justification:
@@ -120,7 +120,7 @@ Optimal Params (Early Stoping,Batch Size): </br>
 ![param_info](img/params_search_result2.png)
 
 Experiment log:</br> 
-![experiments](img/params_search_result2.png)
+![experiments](img/table2_exp.png)
 
 ## Code Execution
  Classification Steps </br>
