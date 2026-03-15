@@ -168,18 +168,6 @@ to quantify the performance of the prediction model. </br>
 The accuracy of this model measured using the test dataset is 87.22%. 
 And the table below shows the classification report of the prediction model.
 
-| Class | Precision | Recall | F1-Score | Support |
-| :--- | :--- | :--- | :--- | :--- |
-| **0** | 0.90 | 0.95 | 0.92 | 82 |
-| **1** | 0.91 | 0.67 | 0.77 | 86 |
-| **2** | 0.69 | 0.77 | 0.73 | 87 |
-| **3** | 0.75 | 0.77 | 0.76 | 87 |
-| **4** | 0.90 | 0.94 | 0.92 | 106 |
-| **5** | 0.98 | 0.97 | 0.97 | 89 |
-| **6** | 0.99 | 1.00 | 0.99 | 97 |
-| | | | | |
-| **Accuracy** | | | **0.87** | 634 |
-| **Macro Avg** | 0.87 | 0.87 | 0.87 | 634 |
-| **Weighted Avg** | 0.88 | 0.87 | 0.87 | 634 |
+![result](img/result.png)
 
 Based on the classification report, class 0 ('Insufficient_Weight'), 4 ('Obesity_Type_I'),5 ('Obesity_Type_II') and 6 ('Obesity_Type_III') show a very good performance, with F1-scores above 0.90. There is room for improvement in terms of the class 1 ('Normal_Weight'), class 2 ('Overweight_Level_I') and 3 ('Overweight_Level_II').  Further investigation of the prediction on class 1,2,3 is required such as to conduct exploratory data analysis on the interaction between these 3 classes. There could be overlapping features or insufficient representation in the training data. 
