@@ -24,7 +24,25 @@ feature name = [ Gender, Age, Height, Weight, family_history_with_overweight, FA
 **Target feature**: Obesity Level; </br> 
 classes = ['Normal_Weight', 'Overweight_Level_I', 'Overweight_Level_II', 'Obesity_Type_I', 'Insufficient_Weight', 'Obesity_Type_II', 'Obesity_Type_III']
 
-![dataset_info](img/dataset.png)
+| Variable | Description | Data Type | Unique Value for Categorical Variable | Missing Value |
+| :--- | :--- | :--- | :--- | :--- |
+| **Gender** | Gender | Categorical | ['Female', 'Male'] | No |
+| **Age** | Age | Continuous | - | No |
+| **Height** | Height, in m | Continuous | - | No |
+| **Weight** | Weight, in kg | Continuous | - | No |
+| **family_history_with_overweight** | Has a family member suffered or suffers from overweight? | Binary | ['yes', 'no'] | No |
+| **FAVC** | Do you eat high caloric food frequently? | Binary | ['no', 'yes'] | No |
+| **FCVC** | Do you usually eat vegetables in your meals? | Integer | - | No |
+| **NCP** | How many main meals do you have daily? | Continuous | - | No |
+| **CAEC** | Do you eat any food between meals? | Categorical | ['Sometimes', 'Frequently', 'Always', 'no'] | No |
+| **SMOKE** | Do you smoke? | Binary | ['no', 'yes'] | No |
+| **CH2O** | How much water do you drink daily? | Continuous | - | No |
+| **SCC** | Do you monitor the calories you eat daily? | Binary | ['no', 'yes'] | No |
+| **FAF** | How often do you have physical activity? | Continuous | - | No |
+| **TUE** | How much time do you use technological devices such as cell phone, videogames, television, computer and others? | Integer | - | No |
+| **CALC** | How often do you drink alcohol? | Categorical | ['no', 'Sometimes', 'Frequently', 'Always'] | No |
+| **MTRANS** | Which transportation do you usually use? | Categorical | ['Public_Transportation', 'Walking', 'Automobile', 'Motorbike', 'Bike'] | No |
+| **NObeyesdad** | Obesity level | Categorical | ['Normal_Weight', 'Overweight_Level_I', 'Overweight_Level_II', 'Obesity_Type_I', 'Insufficient_Weight', 'Obesity_Type_II', 'Obesity_Type_III'] | No |
 
 
 ## Model Development
@@ -36,7 +54,17 @@ Model used: **Multilayer Perceptron (MLP)**
 
 Table below shows the parameters defined in the model; justification will be discussed in the next section. 
 
-![model_info](img/model.png)
+| Parameters | Values |
+| :--- | :--- |
+| **Number of Hidden Layer** | 4 |
+| **Number of neurons per layer** | 16 |
+| **Activation function of hidden layer** | Relu |
+| **Output Layer neurons** | 7 |
+| **Activation function of output layer** | Softmax |
+| **Learning rate** | Determined by optimiser (‘adam’) |
+| **Loss function** | SparseCategoricalCrossentropy |
+| **Early Stopping** | 10 |
+| **Batch size** | 8 |
 
 **a. Hidden layer: **4** layers with **16** neurons per layer.**  
 Activation function: relu </br>
@@ -57,7 +85,18 @@ Optimal Params (Hidden Layer): </br>
 ![param_info](img/params_search_result.png)
 
 Experiment log:</br> 
-![exp_info](img/table1_exp.png)
+| Experiment No. | Hidden Layer | Nodes per layer | Description | Final Epoch No. | Training Accuracy | Validation Accuracy (3 repeats/each trial) | Average Validation Accuracy | Differences |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **1** | 1 | 8 | EarlyStopping = 5<br>epoch = 300 | 180<br>258<br>300 | 0.7104 +/- 0.0216<br>0.7443 +/- 0.0212<br>0.7178 +/- 0.0335 | 0.7095 +/- 0.0216<br>0.7568 +/- 0.0212<br>0.7173 +/- 0.0335 | 0.7095 | - |
+| **2** | 1 | 12 | EarlyStopping = 5<br>epoch = 300 | 136<br>166<br>119 | 0.7299 +/- 0.0224<br>0.7615 +/- 0.0155<br>0.7491 +/- 0.0111 | 0.7376 +/- 0.0224<br>0.7601 +/- 0.0155<br>0.7635 +/- 0.0111 | 0.7376 | 3.96% |
+| **3** | 1 | 16 | EarlyStopping = 5<br>epoch = 300 | 164<br>120<br>90 | 0.7364 +/- 0.0368<br>0.7364 +/- 0.0205<br>0.7138 +/- 0.0294 | 0.7297 +/- 0.0368<br>0.7410 +/- 0.0205<br>0.7151 +/- 0.0294 | 0.7297 | -1.07% |
+| **4** | 2 | 12 | EarlyStopping = 5<br>epoch = 300 | 160<br>198<br>134 | 0.7423 +/- 0.0325<br>0.8047 +/- 0.0432<br>0.7739 +/- 0.0086 | 0.7376 +/- 0.0325<br>0.7962 +/- 0.0432<br>0.7658 +/- 0.0086 | 0.7376 | 1.08% |
+| **5** | 2 | 16 | EarlyStopping = 5<br>epoch = 300 | 117<br>129<br>124 | 0.7671 +/- 0.0193<br>0.7906 +/- 0.0191<br>0.7784 +/- 0.0309 | 0.7680 +/- 0.0193<br>0.7894 +/- 0.0191<br>0.7725 +/- 0.0309 | 0.7680 | 4.12% |
+| **6** | 3 | 16 | EarlyStopping = 5<br>epoch = 300 | 108<br>126<br>114 | 0.7861 +/- 0.0100<br>0.7999 +/- 0.0302<br>0.7776 +/- 0.0526 | 0.7804 +/- 0.0100<br>0.7917 +/- 0.0302<br>0.7849 +/- 0.0526 | 0.7857 | 2.30% |
+| **7** | 3 | 20 | EarlyStopping = 5<br>epoch = 300 | 111<br>100 | 0.7759 +/- 0.0329<br>0.8129 +/- 0.0078<br>0.7880 +/- 0.0270 | 0.7815 +/- 0.0329<br>0.8142 +/- 0.007<br>0.7736 +/- 0.0270 | 0.7898 | 0.52% |
+| **8** | **4** | **16** | **EarlyStopping = 5**<br>**epoch = 300** | **135**<br>**131**<br>**101** | **0.8005 +/- 0.0382**<br>**0.8019 +/- 0.0531**<br>**0.7903 +/- 0.0212** | **0.8153 +/- 0.0382**<br>**0.8052 +/- 0.0531**<br>**0.8063 +/- 0.0212** | **0.8089** | **2.43%** |
+| **9** | 4 | 20 | EarlyStopping = 5<br>epoch = 300 | 60<br>100<br>90 | 0.7787 +/- 0.0298<br>0.7906 +/- 0.0129<br>0.7945 +/- 0.0063 | 0.7804 +/- 0.0298<br>0.7905 +/- 0.0129<br>0.8007 +/- 0.0063 | 0.7905 | -2.27% |
+| **10** | 5 | 16 | EarlyStopping = 5<br>epoch = 300 | 92<br>59<br>69 | 0.7708 +/- 0.0148<br>0.7655 +/- 0.0018<br>0.7779 +/- 0.0128 | 0.7950 +/- 0.0148<br>0.7703 +/- 0.0018<br>0.7860 +/- 0.0128 | 0.7838 | -0.86% |
 
 
 **b. Output Layer: 1 layer with 7 neurons; Activation function: softmax** </br>
@@ -93,8 +132,12 @@ Optimal Params (Early Stoping,Batch Size): </br>
 ![param_info](img/params_search_result2.png)
 
 Experiment log:</br> 
-![exp_info](img/table2_exp.png)
-
+| Experiment No. | Hidden Layer | Nodes per layer | Description | Final Epoch No. | Training Accuracy | Validation Accuracy | Average Validation Accuracy | Differences |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Benchmark** | 4 | 16 | EarlyStopping = 5<br>epoch = 300 | 135<br>131<br>101 | 0.8005 +/- 0.0382<br>0.8019 +/- 0.0531<br>0.7903 +/- 0.0212 | 0.8153 +/- 0.0382<br>0.8052 +/- 0.0531<br>0.8063 +/- 0.0212 | 0.8089 | - |
+| **13** | 4 | 16 | EarlyStopping = 5<br>epoch = 300<br>Batch_size=8 | 64<br>71<br>59 | 0.7996 +/- 0.0191<br>0.8112 +/- 0.0038<br>0.7804 +/- 0.0169 | 0.8142 +/- 0.0191<br>0.8277 +/- 0.0038<br>0.8074 +/- 0.0169 | 0.8164 | 0.93% |
+| **14** | **4** | **16** | **EarlyStopping = 10**<br>**epoch = 300**<br>**Batch_size=8** | **118**<br>**93**<br>**107** | **0.8566 +/- 0.0042**<br>**0.8321 +/- 0.0239**<br>**0.8242 +/- 0.0184** | **0.8671 +/- 0.0042**<br>**0.8592 +/- 0.0239**<br>**0.8356 +/- 0.0184** | **0.8540** | **4.60%** |
+| **15** | 4 | 16 | EarlyStopping = 10<br>epoch = 300<br>Batch_size=16 | 123<br>169<br>156 | 0.8391 +/- 0.0012<br>0.8326 +/- 0.0321<br>0.8400 +/- 0.0140 | 0.8615 +/- 0.0012<br>0.8390 +/- 0.0321<br>0.8491 +/- 0.0140 | 0.8499 | -0.48% |
 
 ## Code Execution
  Classification Steps </br>
@@ -108,7 +151,13 @@ Sanity checks on the data has been performed:
 Step 2: Feature Engineering (Data Encoding) </br>
 The categorical variables below are encoded to numerical values:
 
-![encoding](img/encoding.png)
+| Variables | Encoding |
+| :--- | :--- |
+| **Gender** | Female: 0<br>Male: 1 |
+| **family_history_with_overweight**<br>**FAVC**<br>**SMOKE**<br>**SCC** | no: 0<br>yes: 1 |
+| **CAEC**<br>**CALC** | no: 0<br>Sometimes: 1<br>Frequently: 2<br>Always: 3 |
+| **MTRANS** | Walking: 0<br>Public Transportation: 1<br>Bike: 2<br>Motorbike: 3<br>Automobile: 4 |
+| **NObeyesdad** | Insufficient Weight: 0<br>Normal_Weight: 1<br>Overweight_Level_I: 2<br>Overweight_Level_II: 3<br>Obesity_Type_I: 4<br>Obesity_Type_II: 5<br>Obesity_Type_III: 6 |
 
 Step 3: Feature Selection </br>
 In this study, all of the features will be selected as input to the prediction model. 
@@ -134,8 +183,20 @@ to quantify the performance of the prediction model. </br>
 
 ## Result 
 The accuracy of this model measured using the test dataset is 87.22%. 
-And the figure below shows the classification report of the prediction model.
+And the table below shows the classification report of the prediction model.
 
-![result](img/result.png)
+| Class | Precision | Recall | F1-Score | Support |
+| :--- | :--- | :--- | :--- | :--- |
+| **0** | 0.90 | 0.95 | 0.92 | 82 |
+| **1** | 0.91 | 0.67 | 0.77 | 86 |
+| **2** | 0.69 | 0.77 | 0.73 | 87 |
+| **3** | 0.75 | 0.77 | 0.76 | 87 |
+| **4** | 0.90 | 0.94 | 0.92 | 106 |
+| **5** | 0.98 | 0.97 | 0.97 | 89 |
+| **6** | 0.99 | 1.00 | 0.99 | 97 |
+| | | | | |
+| **Accuracy** | | | **0.87** | 634 |
+| **Macro Avg** | 0.87 | 0.87 | 0.87 | 634 |
+| **Weighted Avg** | 0.88 | 0.87 | 0.87 | 634 |
 
 Based on the classification report, class 0 ('Insufficient_Weight'), 4 ('Obesity_Type_I'),5 ('Obesity_Type_II') and 6 ('Obesity_Type_III') show a very good performance, with F1-scores above 0.90. There is room for improvement in terms of the class 1 ('Normal_Weight'), class 2 ('Overweight_Level_I') and 3 ('Overweight_Level_II').  Further investigation of the prediction on class 1,2,3 is required such as to conduct exploratory data analysis on the interaction between these 3 classes. There could be overlapping features or insufficient representation in the training data. 
