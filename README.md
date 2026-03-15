@@ -85,19 +85,7 @@ Optimal Params (Hidden Layer): </br>
 ![param_info](img/params_search_result.png)
 
 Experiment log:</br> 
-| Experiment No. | Hidden Layer | Nodes per layer | Description | Final Epoch No. | Training Accuracy | Validation Accuracy (3 repeats/each trial) | Average Validation Accuracy | Differences |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **1** | 1 | 8 | EarlyStopping = 5<br>epoch = 300 | 180<br>258<br>300 | 0.7104 +/- 0.0216<br>0.7443 +/- 0.0212<br>0.7178 +/- 0.0335 | 0.7095 +/- 0.0216<br>0.7568 +/- 0.0212<br>0.7173 +/- 0.0335 | 0.7095 | - |
-| **2** | 1 | 12 | EarlyStopping = 5<br>epoch = 300 | 136<br>166<br>119 | 0.7299 +/- 0.0224<br>0.7615 +/- 0.0155<br>0.7491 +/- 0.0111 | 0.7376 +/- 0.0224<br>0.7601 +/- 0.0155<br>0.7635 +/- 0.0111 | 0.7376 | 3.96% |
-| **3** | 1 | 16 | EarlyStopping = 5<br>epoch = 300 | 164<br>120<br>90 | 0.7364 +/- 0.0368<br>0.7364 +/- 0.0205<br>0.7138 +/- 0.0294 | 0.7297 +/- 0.0368<br>0.7410 +/- 0.0205<br>0.7151 +/- 0.0294 | 0.7297 | -1.07% |
-| **4** | 2 | 12 | EarlyStopping = 5<br>epoch = 300 | 160<br>198<br>134 | 0.7423 +/- 0.0325<br>0.8047 +/- 0.0432<br>0.7739 +/- 0.0086 | 0.7376 +/- 0.0325<br>0.7962 +/- 0.0432<br>0.7658 +/- 0.0086 | 0.7376 | 1.08% |
-| **5** | 2 | 16 | EarlyStopping = 5<br>epoch = 300 | 117<br>129<br>124 | 0.7671 +/- 0.0193<br>0.7906 +/- 0.0191<br>0.7784 +/- 0.0309 | 0.7680 +/- 0.0193<br>0.7894 +/- 0.0191<br>0.7725 +/- 0.0309 | 0.7680 | 4.12% |
-| **6** | 3 | 16 | EarlyStopping = 5<br>epoch = 300 | 108<br>126<br>114 | 0.7861 +/- 0.0100<br>0.7999 +/- 0.0302<br>0.7776 +/- 0.0526 | 0.7804 +/- 0.0100<br>0.7917 +/- 0.0302<br>0.7849 +/- 0.0526 | 0.7857 | 2.30% |
-| **7** | 3 | 20 | EarlyStopping = 5<br>epoch = 300 | 111<br>100 | 0.7759 +/- 0.0329<br>0.8129 +/- 0.0078<br>0.7880 +/- 0.0270 | 0.7815 +/- 0.0329<br>0.8142 +/- 0.007<br>0.7736 +/- 0.0270 | 0.7898 | 0.52% |
-| **8** | **4** | **16** | **EarlyStopping = 5**<br>**epoch = 300** | **135**<br>**131**<br>**101** | **0.8005 +/- 0.0382**<br>**0.8019 +/- 0.0531**<br>**0.7903 +/- 0.0212** | **0.8153 +/- 0.0382**<br>**0.8052 +/- 0.0531**<br>**0.8063 +/- 0.0212** | **0.8089** | **2.43%** |
-| **9** | 4 | 20 | EarlyStopping = 5<br>epoch = 300 | 60<br>100<br>90 | 0.7787 +/- 0.0298<br>0.7906 +/- 0.0129<br>0.7945 +/- 0.0063 | 0.7804 +/- 0.0298<br>0.7905 +/- 0.0129<br>0.8007 +/- 0.0063 | 0.7905 | -2.27% |
-| **10** | 5 | 16 | EarlyStopping = 5<br>epoch = 300 | 92<br>59<br>69 | 0.7708 +/- 0.0148<br>0.7655 +/- 0.0018<br>0.7779 +/- 0.0128 | 0.7950 +/- 0.0148<br>0.7703 +/- 0.0018<br>0.7860 +/- 0.0128 | 0.7838 | -0.86% |
-
+![experiments](img/params_search_result.png)
 
 **b. Output Layer: 1 layer with 7 neurons; Activation function: softmax** </br>
 Justification:
@@ -132,12 +120,7 @@ Optimal Params (Early Stoping,Batch Size): </br>
 ![param_info](img/params_search_result2.png)
 
 Experiment log:</br> 
-| Experiment No. | Hidden Layer | Nodes per layer | Description | Final Epoch No. | Training Accuracy | Validation Accuracy | Average Validation Accuracy | Differences |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Benchmark** | 4 | 16 | EarlyStopping = 5<br>epoch = 300 | 135<br>131<br>101 | 0.8005 +/- 0.0382<br>0.8019 +/- 0.0531<br>0.7903 +/- 0.0212 | 0.8153 +/- 0.0382<br>0.8052 +/- 0.0531<br>0.8063 +/- 0.0212 | 0.8089 | - |
-| **13** | 4 | 16 | EarlyStopping = 5<br>epoch = 300<br>Batch_size=8 | 64<br>71<br>59 | 0.7996 +/- 0.0191<br>0.8112 +/- 0.0038<br>0.7804 +/- 0.0169 | 0.8142 +/- 0.0191<br>0.8277 +/- 0.0038<br>0.8074 +/- 0.0169 | 0.8164 | 0.93% |
-| **14** | **4** | **16** | **EarlyStopping = 10**<br>**epoch = 300**<br>**Batch_size=8** | **118**<br>**93**<br>**107** | **0.8566 +/- 0.0042**<br>**0.8321 +/- 0.0239**<br>**0.8242 +/- 0.0184** | **0.8671 +/- 0.0042**<br>**0.8592 +/- 0.0239**<br>**0.8356 +/- 0.0184** | **0.8540** | **4.60%** |
-| **15** | 4 | 16 | EarlyStopping = 10<br>epoch = 300<br>Batch_size=16 | 123<br>169<br>156 | 0.8391 +/- 0.0012<br>0.8326 +/- 0.0321<br>0.8400 +/- 0.0140 | 0.8615 +/- 0.0012<br>0.8390 +/- 0.0321<br>0.8491 +/- 0.0140 | 0.8499 | -0.48% |
+![experiments](img/params_search_result2.png)
 
 ## Code Execution
  Classification Steps </br>
